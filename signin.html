@@ -15,42 +15,51 @@
   <body>
     <div class="container">
       <div class="float">
-        <a href="signin.html">Sign Up</a>
-     </div>
+        <a href="form.html">Sign Up</a>
+      </div>
       <div class="row">
         <div class="col">
-          <h3> Registration Form</h3>
-      <form action="" name="custom_form" id="form">
-        <label for="username">User Name</label>
-        <input type="text" name="username" id="username" class="form-control" />
-        <span class="nameError" style="display: none"></span><br />
-        <label for="email">User Email</label>
-        <input type="email" name="email" id="email" class="form-control" />
-        <p class="email-error"></p>
-        <label for="passwords">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="passwords"
-          class="form-control"
-          autocomplete="on"
-        />
-        <div  class="password-error">         
-        <span><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="4" cy="4" r="4" fill="#04AA6D" fill-opacity="1.0"></circle></svg>One lowercase character</span><br>
-        <span><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="4" cy="4" r="4" fill="#04AA6D" fill-opacity="1.0"></circle></svg>One special character</span><br>
-        <span><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="4" cy="4" r="4" fill="#04AA6D" fill-opacity="1.0"></circle></svg>One uppercase character</span><br>
-        <span ><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="4" cy="4" r="4" fill="#04AA6D" fill-opacity="1.0"></circle></svg>8 characters minimum</span><br>
-        <span><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="4" cy="4" r="4" fill="#04AA6D" fill-opacity="1.0"></circle></svg>One number</span><br>
+          <form action="" class="signIn">
+            <h3>Login</h3>
+            <label for="userName">Email</label>
+            <input
+              type="email"
+              name="login_email"
+              id="userName"
+              class="form-control"
+            />
+            <p class="login_email"></p>
+            <label for="userPw">Password</label>
+            <input
+              type="password"
+              name="login_password"
+              id="userPw"
+              class="form-control"
+              autocomplete="on"
+            />
+            <input
+              type="submit"
+              value="submit"
+              onclick="check()"
+              class="form-control btn btn-info mt-10"
+              style="margin-top: 10px"
+            />
+            <div id="remember">
+              <input
+                type="checkbox"
+                value="lsRememberMe"
+                id="rememberMe"
+                style="display: inline-block"
+              />
+              <label>Remember me</label>
+            </div>
+          </form>
+        </div>
+        <div class="col"></div>
       </div>
-        <input type="submit" value="submit" class="form-control btn btn-info mt-10"/>
-      </div>
-      </form>
-      <div class="col">
-    </div>
-    </div>
     </div>
     <script>
-      document.forms["custom_form"].onsubmit = function (event) {
+        document.forms["custom_form"].onsubmit = function (event) {
     event.preventDefault();
     var name = document.custom_form.username.value.trim();
     var email = document.custom_form.email.value.trim();
@@ -66,7 +75,7 @@
       // sessionStorage.getItem('Names name');
       document.querySelector(".nameError").style.display = "none";
       localStorage.setItem('name', name);
-      alert('Error on login');
+    
     }
     const regex =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
