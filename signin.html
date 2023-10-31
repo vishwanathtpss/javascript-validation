@@ -19,7 +19,7 @@
       </div>
       <div class="row">
         <div class="col">
-          <form action="user.html" class="signIn">
+          <form action="#" class="signIn">
             <h3>Login</h3>
             <label for="userName">Email</label>
             <input
@@ -55,15 +55,32 @@
             </div>
           </form>
         </div>
-        <div class="col"></div>
+        <div class="col">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="name">
+               
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
     <script>
       
    function check(){
       var storedName = localStorage.getItem('name');
-      console.log(storedName)
+      // console.log(storedName)
       var storedEmail = localStorage.getItem('email');
+      console.log(storedEmail)
       var storedPw = localStorage.getItem('password');
       var userName = document.getElementById('userName');
       var userPw = document.getElementById('userPw');
@@ -73,7 +90,17 @@
             }else{
                 alert('Error on login');
             }
+            
        }
+      var name = localStorage.getItem('name');
+      var email = localStorage.getItem('email');
+     
+       document.getElementById('name').innerHTML = ` <th scope="row">1</th>
+                <td>${name}</td>
+                <td>${email}</td>
+                <td></td>`;
+       
+              // console.log(userName )
     </script>
   </body>
 </html>
