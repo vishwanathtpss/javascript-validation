@@ -10,7 +10,7 @@
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
-    <script src="js/main.js"></script>
+    <!-- <script src="js/main.js"></script> -->
   </head>
   <body>
     <div class="container">
@@ -19,7 +19,7 @@
       </div>
       <div class="row">
         <div class="col">
-          <form action="" class="signIn">
+          <form action="user.html" class="signIn">
             <h3>Login</h3>
             <label for="userName">Email</label>
             <input
@@ -59,59 +59,16 @@
       </div>
     </div>
     <script>
-        document.forms["custom_form"].onsubmit = function (event) {
-    event.preventDefault();
-    var name = document.custom_form.username.value.trim();
-    var email = document.custom_form.email.value.trim();
-    var password = document.custom_form.password.value.trim();
-    var regName = /^[a-zA-Z]/;
-    var nameValid = regName.test(name);
-    if (!nameValid) {
-      document.querySelector(".nameError").innerHTML =
-        "Please enter a username";
-      document.querySelector(".nameError").style.display = "block";
-      document.querySelector(".nameError").style.color = "red";
-    } else {
-      // sessionStorage.getItem('Names name');
-      document.querySelector(".nameError").style.display = "none";
-      localStorage.setItem('name', name);
-    
-    }
-    const regex =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    var emailValid = regex.test(email);
-    if (email === "" && !emailValid) {
-      document.querySelector(".email-error").innerHTML =
-        "Please enter a email";
-      document.querySelector(".email-error").style.display = "block";
-      document.querySelector(".email-error").style.color = "red";
-    } else {
-      document.querySelector(".email-error").style.display = "none";
       
-      localStorage.setItem('email', email);
-    }
-    var regpassword =
-      /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
-    validpassword = regpassword.test(password);
-    if (!validpassword) {
-      document.querySelector(".password-error").innerHTML =
-        "Password is not valid ";
-      document.querySelector(".password-error").style.display = "block";
-      document.querySelector(".password-error").style.color = "red";
-    } else {
-      document.querySelector(".password-error").style.display = "none";
-      localStorage.setItem('password', password);
-    }
-  };
    function check(){
       var storedName = localStorage.getItem('name');
       console.log(storedName)
-      var storedName = localStorage.getItem('email');
-      var storedName = localStorage.getItem('password');
+      var storedEmail = localStorage.getItem('email');
+      var storedPw = localStorage.getItem('password');
       var userName = document.getElementById('userName');
       var userPw = document.getElementById('userPw');
      var userRemember = document.getElementById("rememberMe")
-            if(userName.value == storedName && userPw.value == storedPw){
+            if(userName.value == storedEmail && userPw.value == storedPw){
                 alert('You are logged in.');
             }else{
                 alert('Error on login');

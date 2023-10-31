@@ -10,12 +10,11 @@
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
-    <script src="js/main.js"></script>
   </head>
   <body>
     <div class="container">
       <div class="float">
-        <a href="signin.html">Sign Up</a>
+        <a href="signin.html">Sign In</a>
      </div>
       <div class="row">
         <div class="col">
@@ -46,6 +45,7 @@
       </div>
       </form>
       <div class="col">
+       
     </div>
     </div>
     </div>
@@ -92,21 +92,8 @@
       document.querySelector(".password-error").style.display = "none";
       localStorage.setItem('password', password);
     }
-  };
-   function check(){
-      var storedName = localStorage.getItem('name');
-      console.log(storedName)
-      var storedName = localStorage.getItem('email');
-      var storedName = localStorage.getItem('password');
-      var userName = document.getElementById('userName');
-      var userPw = document.getElementById('userPw');
-     var userRemember = document.getElementById("rememberMe")
-            if(userName.value == storedName && userPw.value == storedPw){
-                alert('You are logged in.');
-            }else{
-                alert('Invalid login credential');
-            }
-       }
+
+   };
     </script>
   </body>
 </html>

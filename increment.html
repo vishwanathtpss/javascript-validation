@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+    <style>
+      body {
+        padding: 25px;
+        background-color: white;
+        color: black;
+        font-size: 25px;
+      }
+
+      .dark-mode {
+        background-color: black;
+        color: white;
+      }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"
+  </head>
+  <body>
+    <h4>lamda function in javascript</h4>
+    <div onclick="myFunction()">
+      <div id="col-2"><div id="icon"></div>
+    </div>
+    <br> <br> <br>
+    <div class="container" style="display: flex">
+     
+      <div id="increment-count">
+        <img src="plus.png" alt="mmm" width="20" height="20" />
+      </div>
+      <div id="total-count"></div>
+      <div id="decrement-count">
+        <img src="minus.png" alt="" width="20" height="20" />
+      </div>
+    </div>
+
+    <script>
+      const countIncrement = document.getElementById("increment-count");
+      const countDecement = document.getElementById("decrement-count");
+      const totalCount = document.getElementById("total-count");
+      var count = 0;
+      totalCount.innerHTML = count;
+      function increment() {
+        count++;
+        totalCount.innerHTML = count;
+      }
+      function decrement() {
+        count--;
+        if (count == 0) {
+          count = 0;
+          totalCount.innerHTML = count;
+        } else {
+          totalCount.innerHTML = count;
+        }
+      }
+      countIncrement.addEventListener("click", increment);
+      countDecement.addEventListener("click", decrement);
+     icon = "sun-o";
+        document.getElementById("icon").innerHTML = ('<i class="fa fa-' + icon + '" aria-hidden="true"></i>');
+      function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+        icon = "moon-o"; 
+        document.getElementById("icon").innerHTML = ('<i class="fa fa-' + icon + '" aria-hidden="true"></i>');
+      }
+      function add(item1, item2) {             // Take two numbers or strings
+      return Number(item1) + Number(item2);  // Simply item1 + item2 concatenate strings
+    }
+      var one = prompt("enter number one ")
+      var two = prompt("enter number two")
+      // alert('sum is ' + add(one ,two));
+      var add = add(one ,two);
+      console.log(add)
+    </script>
+
+</div>
+</A></div>
+
+  </body>
+</html>
