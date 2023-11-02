@@ -20,6 +20,7 @@
         <div class="col">
           <h3> Registration Form</h3>
       <form action="" name="custom_form" id="form">
+        <input type="hidden" name="id" id="id">
         <label for="username">User Name</label>
         <input type="text" name="username" id="username" class="form-control" />
         <span class="nameError" style="display: none"></span><br />
@@ -92,7 +93,13 @@
       document.querySelector(".password-error").style.display = "none";
       localStorage.setItem('password', password);
     }
-
+     contactList = JSON.parse(localStorage.getItem('listItem')) ?? []
+    var formData = {};
+    // var name = document.custom_form.username.value.trim();
+    formData["name"] = document.getElementById("username").value;
+    formData["email"] = document.getElementById("email").value;
+    // localStorage.setItem('user', JSON.stringify(formData));
+    localStorage["user"] = JSON.stringify(formData);
    };
     </script>
   </body>
