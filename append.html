@@ -14,7 +14,7 @@
         margin-left: 20px;
         color: #666;
       }
-      span{
+      span {
         margin: 12px;
       }
     </style>
@@ -45,6 +45,26 @@
           parentUl.removeChild(del);
         });
       }
+      const data = {
+        user: {
+          name: "Alice",
+          preferences: {
+            theme: "dark",
+          },
+        },
+      };
+
+      // Attempt to access the user's theme preference using optional chaining
+      const userTheme = data.user?.preferences?.theme;
+console.log(userTheme)
+      if(userTheme)
+      {
+        console.log(`User theme's preference is ${userTheme}.`)
+
+      }else{
+        console.log(`User theme's preference is not set`)
+      }
+
     </script>
   </body>
 </html>
